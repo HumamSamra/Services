@@ -10,7 +10,7 @@ $("form#LoginForm").submit(function (e){
           )
         sessionStorage.setItem("Logged", "1");
         setTimeout(() => {
-            window.location.href = "Lobby";
+            window.location.href = "Lobby.html";
         }, 500);
 
     }else{

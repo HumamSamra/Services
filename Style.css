@@ -4,9 +4,8 @@
 
 .meme-s{
     position: absolute;
-    top: 24%;
+    top: 80px;
     left: 51.2%;
-    text-shadow: 2px 2px 6px rgb(63 107 169 / 50%);
     transform: translate(-50%, -50%);
     -webkit-text-stroke: 1px black;
     color: white !important;

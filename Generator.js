@@ -1,7 +1,7 @@
 $(document).ready(function (){
     var logged = sessionStorage.getItem("Logged");
     if(logged != "1"){
-        window.location.href = "index";
+        window.location.href = "index.html";
     }
 })
 
@@ -13,6 +13,14 @@ function SizeChange(e)
 {
     document.getElementById("MemeTitle").style.fontSize = e.value + "px"; 
 }
+
+function ChangeHeight(e)
+{
+    if(e.value < 52){
+        document.getElementById("MemeTitle").style.marginTop = e.value * 4 + "px"; 
+    }
+}
+
 
 function Next(){
     var x = 0;
