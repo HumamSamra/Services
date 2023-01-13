@@ -11,7 +11,9 @@ function ChangeValue(e){
 
 function SizeChange(e)
 {
-    document.getElementById("MemeTitle").style.fontSize = e.value + "px"; 
+    if(e.value < 80){
+        document.getElementById("MemeTitle").style.fontSize = e.value + "px"; 
+    }
 }
 
 function ChangeHeight(e)
