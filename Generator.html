@@ -12,25 +12,29 @@
   <title>WuToDo</title>
 </head>
 
-<body class="d-block">
-  <div class="text-center container mt-10">
-    <div>
-      <form class="form-signin" id="LoginForm">
-        <img class="mb-4 rounded" src="Images/Main.gif" alt="" width="144"
-          height="144">
-        <h1 class="h3 mb-3 font-weight-normal">sign in</h1>
-        <label for="UserName" class="sr-only">UserName</label>
-        <input autocapitalize autocomplete="off" type="text" id="UserName" class="form-control" placeholder="UserName" required="" autofocus="">
-        <label autocomplete="off" for="Password" class="sr-only">Password</label>
-        <input type="password" id="Password" class="form-control" placeholder="Password" required="">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <p class="mt-5 mb-3 text-muted">© 2022 - 2023</p>
-      </form>
+<body>
+  <div class="container text-center">
+    <div class="card text-center mb-3 mr-auto ml-auto" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Meme Generator</h5>
+        <div>
+          <label id="MemeTitle" class="meme-s">Meme Title</label>
+        <img id="MemeImg" src="Images/Memes/1.png" width="250px" height="250px">
+        </div>
+        <div class="d-flex mb-2 mt-2">
+          
+          <input class="form-control mr-1 col-md-4" value="30" oninput="SizeChange(this)" placeholder="Size" type="number">
+          <input class="form-control " oninput="ChangeValue(this)" value="Meme Title" placeholder="Meme Title">
+        </div>
+        <div class="d-flex">
+            <div class="col-md-2"></div>
+            <button class="btn btn-primary mr-2" onclick="Previous()">Previous</button>
+            <button class="btn btn-primary" onclick="Next()">Next</button>
+            <div class="col-md-2"></div>
+          </div>
+      </div>
     </div>
-
   </div>
-
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -41,8 +45,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="JavaScript.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="Generator.js"></script>
+</body>
 
 </html>

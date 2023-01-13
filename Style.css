@@ -1,0 +1,15 @@
+.mt-10{
+    margin-top: 150px !important;
+}
+
+.meme-s{
+    position: absolute;
+    top: 24%;
+    left: 51.2%;
+    transform: translate(-50%, -50%);
+    -webkit-text-stroke: 1px black;
+    color: white !important;
+    font-size: 30px;
+    font-family: fantasy;
+    font-weight: bold;
+}
