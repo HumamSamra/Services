@@ -29,7 +29,7 @@ function Next(){
     var srcF = "Images/Memes/";
     var count = document.getElementById("MemeImg").src.split("/");
     var src = count[count.length - 1].split(".", 1);
-    if(src == '10'){
+    if(src == '10' || src.length > 2){
         srcF += '1.png'; 
     }else{
         x = parseInt(src) + 1;
@@ -42,7 +42,7 @@ function Previous(){
     var srcF = "Images/Memes/";
     var count = document.getElementById("MemeImg").src.split("/");
     var src = count[count.length - 1].split(".", 1);
-    if(src == '1'){
+    if(src == '1' || src.length > 2){
         srcF += '10.png'; 
     }else{
         x = parseInt(src) - 1;
@@ -50,3 +50,10 @@ function Previous(){
     }
     document.getElementById("MemeImg").src = srcF;
 }
+
+$("input#IncludeOwn").change(function(){
+    const [file] = this.files;
+    if(file){
+        document.getElementById('MemeImg').src = URL.createObjectURL(file)
+    }
+})

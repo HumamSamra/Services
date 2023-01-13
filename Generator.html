@@ -18,11 +18,14 @@
       <div class="card-body">
         <h5 class="card-title">Meme Generator</h5>
         <div>
+          <label for="IncludeOwn">Include Your Own Image : </label>
+          <input class="form-control mb-2" type="file" id="IncludeOwn">  
+        </div>
+        <div>
           <label id="MemeTitle" class="meme-s">Meme Title</label>
           <img id="MemeImg" src="Images/Memes/1.png" width="250px" height="250px">
         </div>
         <div class="d-flex mb-2 mt-2">
-
           <div class="col-md-2"></div>
           <input class="form-control mr-1 col-md-4" max="80" min="0" value="30" oninput="SizeChange(this)" placeholder="Size"
             type="number">
