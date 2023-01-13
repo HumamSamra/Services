@@ -1,7 +1,7 @@
 $(document).ready(function (){
     var logged = sessionStorage.getItem("Logged");
     if(logged != "1"){
-        window.location.href = "index.html";
+        window.location.href = "index";
     }
 })
 
