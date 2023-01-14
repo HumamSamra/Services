@@ -8,14 +8,12 @@ $(document).ready(function (){
 function ChangeValue(e){
     document.getElementById("MemeTitle").innerHTML = e.value;
 }
-
 function SizeChange(e)
 {
-    if(e.value < 80){
+    if(e.value < 40){
         document.getElementById("MemeTitle").style.fontSize = e.value + "px"; 
     }
 }
-
 function ChangeHeight(e)
 {
     if(e.value < 52){
