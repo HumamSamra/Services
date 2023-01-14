@@ -43,6 +43,10 @@
     0 0 1px #000;
 }
 
+.t-b{
+    -webkit-text-stroke: 1.5px black;
+}
+
 .cstm-card{
     cursor: pointer;
     opacity: 100%;
