@@ -71,7 +71,7 @@ if (!localStorage.getItem("Logged")) {
     for(let i = 1; i < count; i++){
         var ele = document.getElementById('term_' + i).innerHTML.toString().toLowerCase();
         let parent = document.getElementById("item_" + i);
-        if(!ele.toLowerCase().indexOf(search) > -1){
+        if(!search.indexOf(ele.toLowerCase()) > -1){
             parent.classList.remove("d-none");
         }else{
             parent.classList.add("d-none");
