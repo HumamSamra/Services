@@ -72,9 +72,9 @@ if (!localStorage.getItem("Logged")) {
         var ele = document.getElementById('term_' + i).innerHTML.toString().toLowerCase();
         let parent = document.getElementById("item_" + i);
         if(!ele.includes(search.toLowerCase())){
-            parent.classList.remove("d-none");
-        }else{
             parent.classList.add("d-none");
+        }else{
+            parent.classList.remove("d-none");
         }
     }
   }
