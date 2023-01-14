@@ -62,19 +62,19 @@ if (!localStorage.getItem("Logged")) {
   }
   function Search(ev){
     let search, count;
-    search = ev.value;
+    search = ev.value.toLowerCase();
     count = GetLocalStorageCount();
     if(!ev){
         LoadItems();
         return;
     }
-    for(let i = 1; i < count; i++){
+    for(let i = 1; i < count + 1; i++){
         var ele = document.getElementById('term_' + i).innerHTML.toString().toLowerCase();
         let parent = document.getElementById("item_" + i);
-        if(!ele.includes(search.toLowerCase())){
-            parent.classList.add("d-none");
-        }else{
+       if(ele.includes(search)){
             parent.classList.remove("d-none");
+        }else{
+            parent.classList.add("d-none");
         }
     }
   }
