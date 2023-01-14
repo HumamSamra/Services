@@ -4,7 +4,7 @@ if(!localStorage.getItem("Logged")){
 
 
 function ChangeValue(e){
-    document.getElementById("MemeTitle").innerHTML = e.value;
+    $("#MemeTitle").text(e.value);
 }
 function SizeChange(e)
 {
