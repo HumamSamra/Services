@@ -69,9 +69,9 @@ if (!localStorage.getItem("Logged")) {
         return;
     }
     for(let i = 1; i < count; i++){
-        var ele = document.getElementById('term_' + i).innerHTML.toString();
+        var ele = document.getElementById('term_' + i).innerHTML.toString().toLowerCase();
         let parent = document.getElementById("item_" + i);
-        if(!ele.toString().toLowerCase().search(search.toLowerCase())){
+        if(!ele.toString().toLowerCase().indexOf(search) > -1){
             parent.classList.add("d-none");
         }else{
             parent.classList.remove("d-none");
