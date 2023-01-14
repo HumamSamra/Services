@@ -1,6 +1,5 @@
 $(document).ready(function (){
-    var logged = sessionStorage.getItem("Logged");
-    if(logged != "1"){
+    if(!localStorage.getItem("Logged")){
         window.location.href = "index.html";
     }
 })

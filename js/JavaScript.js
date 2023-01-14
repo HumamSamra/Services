@@ -8,7 +8,7 @@ $("form#LoginForm").submit(function (e){
             'Redirecting You...',
             'success'
           )
-        sessionStorage.setItem("Logged", "1");
+        localStorage.setItem("Logged", "1");
         setTimeout(() => {
             window.location.href = "Lobby.html";
         }, 500);
@@ -23,7 +23,7 @@ $("form#LoginForm").submit(function (e){
 })
 
 $(document).ready(function (){
-    if(sessionStorage.getItem("Logged") == '1'){
-        window.location.href = "Generator.html";
+    if(localStorage.getItem("Logged")){
+        window.location.href = "Lobby.html";
     }
 })

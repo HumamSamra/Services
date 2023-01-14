@@ -13,37 +13,26 @@
 </head>
 
 <body class="d-block">
-  <div class="container px-4 py-5" id="custom-cards">
-    <h2 class="pb-2 border-bottom mb-4">Services</h2>
-
-    <div class="row">
-      <div class="col-md-4 mb-2" onclick="window.location.href='Generator.html'">
-        <div class="cstm-card card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-          style="background-image: url('https://i.gifer.com/7dDt.gif');">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 text-center">
-            <h3 class="pt-5 mt-5 display-6 lh-1 fw-bold">Meme</h3>
-            <p class="mb-0" style="color: gray;">Click to open</p>
-          </div>
+  <div class="container text-center mt-10" style="margin-top: 227px !important;">
+    <div class="card text-center mb-3 mr-auto ml-auto" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">QR Code Generator</h5>
+        <div>
+          <div id="qrcode" class="m-4" style="text-align: center !important;"></div>
+        </div>
+        <div class="input-group mb-3 mt-2">
+          <input id="LinkQR" type="text" class="form-control" placeholder="Link" aria-label="Link"
+            aria-describedby="button-addon2">
+          <button onclick="MakeQRCode()" class="btn btn-outline-secondary" type="button" id="button-addon2">QR</button>
         </div>
       </div>
-      <div class="col-md-4 mb-2" onclick="window.location.href='QRCode.html'">
-        <div class="cstm-card card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-          style="background-image: url('https://media1.giphy.com/media/jaOXKCxtBPLieRLI0c/giphy.gif');">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 text-center">
-            <h3 class="pt-5 mt-5 display-6 lh-1 fw-bold">QR Code</h3>
-            <p class="mb-0" style="color: gray;">Click to open</p>
-          </div>
-        </div>
-      </div>
-
     </div>
-    
   </div>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
@@ -52,11 +41,28 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
-    $(document).ready(function (){
-    if(!localStorage.getItem("Logged")){
-        window.location.href = "index.html";
-     }
-    })
+    if (!localStorage.getItem("Logged")) {
+      window.location.href = "index.html"
+    }
+
+    var qrcode = new QRCode("qrcode",{
+    text: document.getElementById("LinkQR").value, 
+    width: 200,
+    height: 200,
+    });
+    function MakeQRCode() {
+      var Link = document.getElementById("LinkQR");
+      if (!Link.value) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Link Is Empty!',
+        })
+        Link.focus();
+        return;
+      }
+      qrcode.makeCode(Link.value);
+    }
+
   </script>
 
 </body>
