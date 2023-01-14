@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://getbootstrap.com/docs/4.0/examples/sign-in/signin.css" rel="stylesheet">
-  <link href="Style.css" rel="stylesheet">
+  <link href="css/Style.css" rel="stylesheet">
   <title>WuToDo</title>
 </head>
 
@@ -21,13 +21,13 @@
           <label for="IncludeOwn">Include Your Own Image : </label>
           <input class="form-control mb-2" type="file" id="IncludeOwn" accept="image/png, image/gif, image/jpeg">  
         </div>
-        <div>
+        <div class="fixed-box">
           <label id="MemeTitle" class="meme-s pr-2 pl-2">Meme Title</label>
           <img id="MemeImg" src="Images/Memes/1.png" width="250px" height="250px">
         </div>
         <div class="d-flex mb-2 mt-2">
           <div class="col-md-2"></div>
-          <input class="form-control mr-1 col-md-4" max="80" min="0" value="30" oninput="SizeChange(this)" placeholder="Size"
+          <input class="form-control mr-1 col-md-4" max="40" min="0" value="30" oninput="SizeChange(this)" placeholder="Size"
             type="number">
           <input class="form-control col-md-4" min="0" max="52" oninput="ChangeHeight(this)" placeholder="Height" value="0"
             type="number">
@@ -54,7 +54,7 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="Generator.js"></script>
+  <script src="js/Generator.js"></script>
 </body>
 
 </html>
