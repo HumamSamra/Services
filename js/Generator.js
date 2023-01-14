@@ -1,8 +1,7 @@
-$(document).ready(function (){
-    if(!localStorage.getItem("Logged")){
-        window.location.href = "index.html";
-    }
-})
+if(!localStorage.getItem("Logged")){
+    window.location.href = "index.html";
+}
+
 
 function ChangeValue(e){
     document.getElementById("MemeTitle").innerHTML = e.value;

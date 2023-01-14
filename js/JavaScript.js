@@ -22,8 +22,7 @@ $("form#LoginForm").submit(function (e){
     }
 })
 
-$(document).ready(function (){
-    if(localStorage.getItem("Logged")){
-        window.location.href = "Lobby.html";
-    }
-})
+
+if(localStorage.getItem("Logged")){
+    window.location.href = "Lobby.html";
+}
