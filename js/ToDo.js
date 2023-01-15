@@ -62,7 +62,7 @@ if (!localStorage.getItem("Logged")) {
   function GetLocalStorageCount(){
     var keys = Object.keys(localStorage),
         i = keys.length;
-    return i.length - 1;
+    return i;
   }
 
   function Search(ev){
@@ -73,14 +73,17 @@ if (!localStorage.getItem("Logged")) {
         LoadItems();
         return;
     }
-    for(let i = 1; i < count + 1; i++){
-        var ele = document.getElementById('term_' + i).value.toString().toLowerCase();
-        let parent = document.getElementById("item_" + i);
+    Object.keys(localStorage).forEach(element => {
+      if(element != 'Logged'){
+        var ele = document.getElementById('term_' + element).value.toLowerCase();
+        let parent = document.getElementById("item_" + element);
        if(ele.includes(search)){
             parent.classList.remove("d-none");
         }else{
             parent.classList.add("d-none");
         }
-    }
+      }
+    });
   }
+
   LoadItems();
