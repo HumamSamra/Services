@@ -8,13 +8,13 @@ function ChangeValue(e){
 }
 function SizeChange(e)
 {
-    if(e.value < 40){
+    if(e.value <= 40){
         document.getElementById("MemeTitle").style.fontSize = e.value + "px"; 
     }
 }
 function ChangeHeight(e)
 {
-    if(e.value < 52){
+    if(e.value <= 65){
         document.getElementById("MemeTitle").style.marginTop = e.value * 4 + "px"; 
     }
 }

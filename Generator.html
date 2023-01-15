@@ -14,7 +14,7 @@
 
 <body>
   <div class="container text-center">
-    <div class="card text-center mb-3 mr-auto ml-auto" style="width: 18rem;">
+    <div class="pl-0 pr-0 card text-center mb-3 w-100 col-md-6 mr-auto ml-auto" style="width: 18rem;">
       <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="Lobby.html">Lobby</a></li>
@@ -29,22 +29,20 @@
         </div>
         <div class="fixed-box">
           <pre><code id="MemeTitle" class="meme-s pr-2 pl-2">Meme Title</code></pre>
-          <img id="MemeImg" src="Images/Memes/1.png" width="250px" height="250px">
+          <img id="MemeImg" src="Images/Memes/1.png" width="300px" height="300px">
         </div>
         <div class="d-flex mb-2 mt-2">
           <div class="col-md-2"></div>
           <input class="form-control mr-1 col-md-4" max="40" min="0" value="30" oninput="SizeChange(this)" placeholder="Size"
             type="number">
-          <input class="form-control col-md-4" min="0" max="52" oninput="ChangeHeight(this)" placeholder="Height" value="0"
+          <input class="form-control col-md-4" min="0" max="65" oninput="ChangeHeight(this)" placeholder="Height" value="0"
             type="number">
           <div class="col-md-2"></div>
         </div>
         <textarea class="form-control mb-2" id="MemeText" oninput="ChangeValue(this)" placeholder="Meme Title">Meme Title</textarea>
-        <div class="d-flex">
-          <div class="col-md-2"></div>
+        <div class="text-center">
           <button class="btn btn-primary mr-2" onclick="Previous()">Previous</button>
           <button class="btn btn-primary" onclick="Next()">Next</button>
-          <div class="col-md-2"></div>
         </div>
       </div>
     </div>
