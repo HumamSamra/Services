@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <link rel="icon" type="image/png" href="https://cdn.pixabay.com/photo/2021/04/21/10/17/meme-6195988_1280.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="css/Style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <title>WuToDo</title>
+  <script>
+    $(document).ready(function () {
+      if (!localStorage.getItem("Logged")) {
+        window.location.href = "index.html";
+      }
+    })
+  </script>
+</head>
+
+<body class="d-block mt-5 container">
+  <nav
+    style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+    aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="Lobby.html">Lobby</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Note Pad</li>
+    </ol>
+  </nav>
+
+  <div class="border-bottom pb-2 mb-4 d-flex">
+    <h2 class="mb-0">NotePad <small> --Auto Saved-- </small></h2>
+  </div>
+  <div>
+    <div class="m-2">
+  <label for="customRange2" class="form-label">Font Size : </label>
+<input type="range" id="fs-Range" oninput="Update(this)" type="range" class="form-range" min="10" max="50" id="customRange2">
+<select class="form-select" id="Font-Family">
+  <option disabled selected>--Font--</option>
+  <option value="none">none</option>
+  <option value="fantasy">fantasy</option>
+  <option value="monospace">monospace</option>
+  <option value="cursive">cursive</option>
+  <option value="sans-serif">sans-serif</option>
+  <option value="serif">serif</option>
+</select>
+  </div>
+    <textarea spellcheck="false" autofocus autocapitalize="false" 
+    oninput="Update('')" id="textArea" class="mb-3 w-100 shadow text-area"></textarea>
+  </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+
+    var ta = document.getElementById("textArea");
+    var ff = document.getElementById("Font-Family");
+    var range = document.getElementById("fs-Range");
+
+    var fs = localStorage.getItem("fs");
+    var txt = localStorage.getItem("txtarea");
+    var txtff = localStorage.getItem("ff"); 
+
+    
+    if(fs)
+    {
+      ta.style.fontSize = fs + "px";
+      range.value = fs;
+    } 
+    if(txt) ta.innerHTML = txt;
+    $(document).ready(function (){
+      if(txtff) ff.value = txtff;
+    else ta.style.fontFamily = 'cursive';
+    })
+    
+    $("#Font-Family").change(function (){
+      ta.style.fontFamily = ff.value;
+      localStorage.setItem("ff", ff.value);
+    })
+
+    function Update(ev) {
+      if(ev){
+        localStorage.setItem("fs", ev.value);
+        ta.style.fontSize = ev.value + "px";
+      }
+      if(ta.scrollHeight < 765) ta.style.height = ta.scrollHeight + "px";
+      localStorage.setItem("txtarea", ta.value);
+    };
+  </script>
+</body>
+
+</html>

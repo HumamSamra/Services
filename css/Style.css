@@ -8,6 +8,22 @@
     position: relative;
 }
 
+::-webkit-scrollbar{
+    display:none;
+}
+
+.text-area{
+    font-family: cursive;
+    font-size: 21px;
+    height: 500px;
+    color: #3a3a3a;
+    resize: none;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding: 25px;
+}
+
 .center{
     margin: 0;
     position: absolute;
