@@ -12,6 +12,13 @@
   <link href="css/Style.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <title>WuToDo</title>
+  <script>
+    $(document).ready(function () {
+      if (!localStorage.getItem("Logged")) {
+        window.location.href = "index.html";
+      }
+    })
+  </script>
 </head>
 
 <body class="d-block mt-5 container">
@@ -66,11 +73,6 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
-    $(document).ready(function () {
-      if (!localStorage.getItem("Logged")) {
-        window.location.href = "index.html";
-      }
-    })
     function logout() {
       Swal.fire({
         title: 'You are about to logout',

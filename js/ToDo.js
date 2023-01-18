@@ -1,8 +1,4 @@
-$(document).ready(function (){
-  if(!localStorage.getItem("Logged")){
-      window.location.href = "index.html";
-  }
-})
+
   function ShowModal(){
     $('#addModal').modal('show');
   }
