@@ -3,6 +3,7 @@
 }
 
 .fixed-box{
+    display:inline-block;
     overflow: hidden;
     position: relative;
 }
@@ -17,6 +18,7 @@
 }
 
 .meme-s{
+    white-space: pre-line;
     contain: size;
     position: absolute;
     left: 51.2%;
