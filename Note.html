@@ -79,6 +79,10 @@
       ta.style.fontSize = fs + "px";
       range.value = fs;
     } 
+    if(txtff)
+    {
+      ta.style.fontFamily = txtff;
+    } 
     if(txt) ta.innerHTML = txt;
     $(document).ready(function (){
       if(txtff) ff.value = txtff;
