@@ -29,8 +29,9 @@
           <div id="qrcode" class="m-4" style="text-align: center !important;"></div>
         </div>
         <div class="mb-3 mt-2">
-          <input oninput="MakeQRCode()" id="LinkQR" type="text" value="https://www.instagram.com/wutodo/?hl=en" autocapitalize="none"
-            class="form-control" placeholder="Link" aria-label="Link" aria-describedby="button-addon2">
+          <input oninput="MakeQRCode()" id="LinkQR" type="text" value="https://www.instagram.com/wutodo/?hl=en"
+            autocapitalize="none" class="form-control" placeholder="Link" aria-label="Link"
+            aria-describedby="button-addon2">
         </div>
       </div>
     </div>
@@ -48,9 +49,11 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
-    if (!localStorage.getItem("Logged")) {
-      window.location.href = "index.html"
-    }
+    $(document).ready(function () {
+      if (!localStorage.getItem("Logged")) {
+        window.location.href = "index.html";
+      }
+    })
 
     var qrcode = new QRCode("qrcode", {
       text: document.getElementById("LinkQR").value,

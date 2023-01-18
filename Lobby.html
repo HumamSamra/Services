@@ -22,8 +22,7 @@
     </div>
     <div class="row">
       <div class="col-md-4 mb-2" onclick="window.location.href='Generator.html'">
-        <div class="cstm-card card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-          style="background-image: url(https://www.fortressofsolitude.co.za/wp-content/uploads/2021/10/Best-Spider-Man-Memes.png);
+        <div class="cstm-card card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url(https://www.fortressofsolitude.co.za/wp-content/uploads/2021/10/Best-Spider-Man-Memes.png);
           background-size: 400px;">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 text-center">
             <h3 class="t-b pt-5 mt-5 display-6 lh-1 fw-bold">Meme</h3>
@@ -32,8 +31,7 @@
         </div>
       </div>
       <div class="col-md-4 mb-2" onclick="window.location.href='QRCode.html'">
-        <div class="cstm-card card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-          style="background-image: url(https://i.kym-cdn.com/photos/images/masonry/002/297/355/cb3);
+        <div class="cstm-card card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url(https://i.kym-cdn.com/photos/images/masonry/002/297/355/cb3);
           background-size: 380px;">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 text-center">
             <h3 class="t-b pt-5 mt-5 display-6 lh-1 fw-bold">QR Code</h3>
@@ -42,8 +40,7 @@
         </div>
       </div>
       <div class="col-md-4 mb-2" onclick="window.location.href='ToDo.html'">
-        <div class="cstm-card card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-          style="background-size: 380px;
+        <div class="cstm-card card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-size: 380px;
           background-image: url(https://i.imgflip.com/47dw4n.jpg);
           background-position: center;">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 text-center">
@@ -69,9 +66,11 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
-    if (!localStorage.getItem("Logged")) {
-      window.location.href = "index.html";
-    }
+    $(document).ready(function () {
+      if (!localStorage.getItem("Logged")) {
+        window.location.href = "index.html";
+      }
+    })
     function logout() {
       Swal.fire({
         title: 'You are about to logout',
