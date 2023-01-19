@@ -37,8 +37,8 @@
         $(this).val($(this).val().substring(0, start) + spaces + $(this).val().substring(end));
         this.selectionStart = this.selectionEnd = start + spaces.length;
       }
+    })
     });
-  });
   
   function Update(ev) {
     if (ev) {
@@ -46,18 +46,10 @@
       ta.style.fontSize = ev.value + "px";
     }
     if (ta.scrollHeight < 765) ta.style.height = ta.scrollHeight + "px";
-    var last = ta.value.toString().charAt(ta.selectionEnd - 1);
-    if (last == '{')
-    {
-      alert();
-      ta.value += '}';
-      ta.selectionEnd -= 1;
-    }
-    if (last == '(')
-    {
-      ta.value += ')';
-      ta.selectionEnd -= 1;
-    }
-    localStorage.setItem("txtarea", ta.value);
+    SaveChanges();
   };
+
+  function SaveChanges(){
+    localStorage.setItem("txtarea", ta.value);
+  }
   
