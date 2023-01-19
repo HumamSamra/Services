@@ -35,20 +35,21 @@
   </div>
   <div>
     <div class="m-2">
-  <label for="customRange2" class="form-label">Font Size : </label>
-<input type="range" id="fs-Range" oninput="Update(this)" type="range" class="form-range" min="10" max="50" id="customRange2">
-<select class="form-select" id="Font-Family">
-  <option disabled selected>--Font--</option>
-  <option value="none">none</option>
-  <option value="fantasy">fantasy</option>
-  <option value="monospace">monospace</option>
-  <option value="cursive">cursive</option>
-  <option value="sans-serif">sans-serif</option>
-  <option value="serif">serif</option>
-</select>
-  </div>
-    <textarea spellcheck="false" autofocus autocapitalize="false" 
-    oninput="Update('')" id="textArea" class="mb-3 w-100 shadow text-area"></textarea>
+      <label for="customRange2" class="form-label">Font Size : </label>
+      <input type="range" id="fs-Range" oninput="Update(this)" type="range" class="form-range" min="10" max="50"
+        id="customRange2">
+      <select class="form-select" id="Font-Family">
+        <option disabled selected>--Font--</option>
+        <option value="none">none</option>
+        <option value="fantasy">fantasy</option>
+        <option value="monospace">monospace</option>
+        <option value="cursive">cursive</option>
+        <option value="sans-serif">sans-serif</option>
+        <option value="serif">serif</option>
+      </select>
+    </div>
+    <textarea spellcheck="false" autofocus autocapitalize="false" oninput="Update('')" id="textArea"
+      class="mb-3 w-100 shadow text-area"></textarea>
   </div>
   </div>
 
@@ -63,42 +64,7 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script>
-
-    var ta = document.getElementById("textArea");
-    var ff = document.getElementById("Font-Family");
-    var range = document.getElementById("fs-Range");
-
-    var fs = localStorage.getItem("fs");
-    var txt = localStorage.getItem("txtarea");
-    var txtff = localStorage.getItem("ff"); 
-
-    
-    if(fs)
-    {
-      ta.style.fontSize = fs + "px";
-      range.value = fs;
-    } 
-    if(txt) ta.innerHTML = txt;
-    $(document).ready(function (){
-      if(txtff) ff.value = txtff;
-    else ta.style.fontFamily = 'cursive';
-    })
-    
-    $("#Font-Family").change(function (){
-      ta.style.fontFamily = ff.value;
-      localStorage.setItem("ff", ff.value);
-    })
-
-    function Update(ev) {
-      if(ev){
-        localStorage.setItem("fs", ev.value);
-        ta.style.fontSize = ev.value + "px";
-      }
-      if(ta.scrollHeight < 765) ta.style.height = ta.scrollHeight + "px";
-      localStorage.setItem("txtarea", ta.value);
-    };
-  </script>
+  <script src="js/NotePad.js"></script>
 </body>
 
 </html>
