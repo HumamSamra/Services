@@ -1,13 +1,21 @@
-
+Coloris({
+  theme: 'large',
+  themeMode: 'dark',
+  value: '#1d1d1d'
+})
 var ta = document.getElementById("textArea");
 var ff = document.getElementById("Font-Family");
 var range = document.getElementById("fs-Range");
+var fontColor = document.getElementById("font-color");
 
 var fs = localStorage.getItem("fs");
 var txt = localStorage.getItem("txtarea");
 var txtff = localStorage.getItem("ff");
+var fc = localStorage.getItem("fc");
 
-
+if(!fc){
+  fontColor.value = '#171717';
+}
 if (fs) {
   ta.style.fontSize = fs + "px";
   range.value = fs;
@@ -15,6 +23,8 @@ if (fs) {
 if (txt) ta.innerHTML = txt;
 $(document).ready(function () {
   if (txtff) {
+    fontColor.value = fc;
+    ta.style.color = fc;
     ta.style.fontFamily = txtff;
     ff.value = txtff;
   }
@@ -39,6 +49,12 @@ $(function () {
     }
   })
 });
+
+function FontColor(){
+  localStorage.setItem('fc', fontColor.value);
+  ta.style.color = fontColor.value;
+
+}
 
 function Update(ev) {
   if (ev) {

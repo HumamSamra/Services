@@ -11,6 +11,8 @@
   <link href="css/Style.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <title>WuToDo</title>
+  <link rel="stylesheet" href="Lib/Coloris-main/dist/coloris.min.css" />
+  <script src="lib/Coloris-main/dist/coloris.min.js"></script>
   <script>
     $(document).ready(function () {
       if (!localStorage.getItem("Logged")) {
@@ -38,21 +40,23 @@
       <label for="customRange2" class="form-label">Font Size : </label>
       <input type="range" id="fs-Range" oninput="Update(this)" type="range" class="form-range" min="10" max="50"
         id="customRange2">
-      <select class="form-select" id="Font-Family">
-        <option disabled selected>--Font--</option>
-        <option value="none">none</option>
-        <option value="fantasy">fantasy</option>
-        <option value="monospace">monospace</option>
-        <option value="cursive">cursive</option>
-        <option value="sans-serif">sans-serif</option>
-        <option value="serif">serif</option>
-      </select>
+        <div class="d-flex gap-2">
+          <input type="text" class="form-control" data-coloris id="font-color" oninput="FontColor()"/>
+          <select class="form-select" id="Font-Family">
+            <option disabled="" selected="">--Font--</option>
+            <option value="none">none</option>
+            <option value="fantasy">fantasy</option>
+            <option value="monospace">monospace</option>
+            <option value="cursive">cursive</option>
+            <option value="sans-serif">sans-serif</option>
+            <option value="serif">serif</option>
+          </select>
+        </div>
     </div>
     <textarea spellcheck="false" autofocus autocapitalize="false" oninput="Update('')" id="textArea"
       class="mb-3 w-100 shadow text-area"></textarea>
   </div>
   </div>
-
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
