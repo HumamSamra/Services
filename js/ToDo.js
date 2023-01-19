@@ -72,7 +72,7 @@
         return;
     }
     Object.keys(localStorage).forEach(element => {
-      if(element != 'Logged'){
+      if(element != 'Logged' || element != 'ff' || element != 'fs' || element != 'Logged' || element != 'fc'){
         var ele = document.getElementById('term_' + element).value.toLowerCase();
         let parent = document.getElementById("item_" + element);
        if(ele.includes(search)){
