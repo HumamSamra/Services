@@ -6,22 +6,25 @@
   var fs = localStorage.getItem("fs");
   var txt = localStorage.getItem("txtarea");
   var txtff = localStorage.getItem("ff");
-  
-  
+
+
   if (fs) {
     ta.style.fontSize = fs + "px";
     range.value = fs;
   }
   if (txt) ta.innerHTML = txt;
-  $(document).ready(function () {
-    if (txtff) ff.value = txtff;
-    else ta.style.fontFamily = 'cursive';
-  })
-  
+    $(document).ready(function () {
+      if (txtff) {
+        ta.style.fontFamily = txtff;
+        ff.value = txtff;
+      }
+    })
+
   $("#Font-Family").change(function () {
     ta.style.fontFamily = ff.value;
     localStorage.setItem("ff", ff.value);
   })
+
   $(function () {
     $('textarea').keydown(function (e) {
       var keyCode = e.keyCode || e.which;
@@ -46,6 +49,7 @@
     var last = ta.value.toString().charAt(ta.selectionEnd - 1);
     if (last == '{')
     {
+      alert();
       ta.value += '}';
       ta.selectionEnd -= 1;
     }
