@@ -18,7 +18,7 @@
   function LoadItems(){
     ResetList();
     Object.keys(localStorage).forEach(element => {
-      if(element != 'Logged'){
+      if(element != 'Logged' && element != 'ff' && element != 'fs' && element != 'txtarea' && element != 'fc'){
         var f = localStorage.getItem(element);
         var val = f.split('[/[');
         document.getElementById('ItemsListT').innerHTML += ('<h id="item_' + element + '" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">'
@@ -72,7 +72,7 @@
         return;
     }
     Object.keys(localStorage).forEach(element => {
-      if(element != 'Logged' || element != 'ff' || element != 'fs' || element != 'Logged' || element != 'fc'){
+      if(element != 'Logged' && element != 'ff' && element != 'fs' && element != 'txtarea' && element != 'fc'){
         var ele = document.getElementById('term_' + element).value.toLowerCase();
         let parent = document.getElementById("item_" + element);
        if(ele.includes(search)){
