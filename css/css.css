@@ -23,7 +23,7 @@ box-shadow: inset 2px 3px 42px -7px rgba(0,0,0,0.75);
 }
 .first {
     -webkit-box-reflect: above below right left 20px;
-    position: relative;
+    position: absolute;
     width: 500px !important;
     height: 500px !important;
     background-color: red;
@@ -32,7 +32,7 @@ box-shadow: inset 2px 3px 42px -7px rgba(0,0,0,0.75);
     background-position: center;
     animation:
     Zoom-In 1s cubic-bezier(0,.96,.23,.99),
-    Shake 1s ease-in-out;
+    Up-Down 1s ease-in-out;
     animation-fill-mode: forwards;
     filter: drop-shadow(10px 10px 11px #000);
 }
@@ -64,7 +64,7 @@ box-shadow: inset 2px 3px 42px -7px rgba(0,0,0,0.75);
     background-position-x: center;
     animation:
     Zoom-In-2 1s cubic-bezier(0,1.01,0,1.01),
-    Shake 1s ease-in-out;
+    Up-Down 1s ease-in-out;
     animation-delay: 1s;
     animation-fill-mode: forwards;
     filter: drop-shadow(10px 10px 11px #000);
@@ -81,7 +81,7 @@ box-shadow: inset 2px 3px 42px -7px rgba(0,0,0,0.75);
     background-size: cover;
     background-position-x: center;
     animation:
-    Left-Right 0.5s ease;
+    Left-Right 0.5s ease-in-out;
     animation-delay: 1.5s;
     animation-fill-mode: forwards;
 }
@@ -98,7 +98,8 @@ box-shadow: inset 2px 3px 42px -7px rgba(0,0,0,0.75);
     background-size: cover;
     background-position-x: center;
     animation:
-    Up-Down 0.5s ease;
+    Up-Down 0.7s ease-in-out,
+    Zoom-In-2 0.7 cubic-bezier(0,.96,.01,.99);
     animation-delay: 2s;
     animation-fill-mode: forwards;
 }

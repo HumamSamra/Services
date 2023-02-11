@@ -72,7 +72,8 @@ function ResetAnimation(){
     var el = document.getElementById('fifth');
     el.style.animation = 'none';
     el.offsetHeight;
-    el.style.animation = null; 
+    el.style.animation = null;
+     
 }
 
-const interval = setInterval(() => ResetAnimation(), 2500);
+const interval = setInterval(() => ResetAnimation(), 2750);
