@@ -75,4 +75,4 @@ function ResetAnimation(){
     el.style.animation = null; 
 }
 
-const interval = setInterval(() => ResetAnimation(), 2700);
+const interval = setInterval(() => ResetAnimation(), 2500);
