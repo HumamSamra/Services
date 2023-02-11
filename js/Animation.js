@@ -1,3 +1,4 @@
+
 function FirstChange(ev){
     const [file] = ev.files;
     var url = URL.createObjectURL(file);
@@ -22,6 +23,29 @@ function FifthChange(ev){
     const [file] = ev.files;
     var url = URL.createObjectURL(file);
     document.getElementById('fifth').setAttribute('style', `background-image: url('${url}')`);
+}
+
+function ChangeAll(ev){
+     for(var i = 0; i < ev.files.length; i++){
+        var url = URL.createObjectURL(ev.files[i]);
+        switch (i){
+            case 0:
+                document.getElementById('first').setAttribute('style', `background-image: url('${url}')`);
+                break;
+            case 1:
+                document.getElementById('second').setAttribute('style', `background-image: url('${url}')`);
+                break;
+            case 2:   
+            document.getElementById('third').setAttribute('style', `background-image: url('${url}')`);
+                break; 
+            case 3:
+                document.getElementById('fourth').setAttribute('style', `background-image: url('${url}')`);
+                break;
+            case 4:
+                document.getElementById('fifth').setAttribute('style', `background-image: url('${url}')`);
+                break;
+        }
+     }
 }
 
 function ResetAnimation(){
@@ -50,3 +74,5 @@ function ResetAnimation(){
     el.offsetHeight;
     el.style.animation = null; 
 }
+
+const interval = setInterval(() => ResetAnimation(), 2700);

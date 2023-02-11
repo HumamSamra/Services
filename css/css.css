@@ -28,7 +28,7 @@ box-shadow: inset 2px 3px 42px -7px rgba(0,0,0,0.75);
     height: 500px !important;
     background-color: red;
     background-repeat: repeat;
-    background-size: auto;
+    background-size: cover;
     background-position: center;
     animation:
     Zoom-In 1s cubic-bezier(0,.96,.23,.99),
@@ -44,7 +44,7 @@ box-shadow: inset 2px 3px 42px -7px rgba(0,0,0,0.75);
     height: 500px;
     background-color: green;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
     background-position: center;
     animation:
     Left-Right 0.5s ease;
@@ -60,7 +60,7 @@ box-shadow: inset 2px 3px 42px -7px rgba(0,0,0,0.75);
     transform:rotate(-5);
     background-color: rgb(53, 117, 255);
     background-repeat: repeat;
-    background-size: auto;
+    background-size: cover;
     background-position-x: center;
     animation:
     Zoom-In-2 1s cubic-bezier(0,1.01,0,1.01),
@@ -78,7 +78,7 @@ box-shadow: inset 2px 3px 42px -7px rgba(0,0,0,0.75);
     left:800px;
     background-color: pink;
     background-repeat: repeat;
-    background-size: auto;
+    background-size: cover;
     background-position-x: center;
     animation:
     Left-Right 0.5s ease;
@@ -95,7 +95,7 @@ box-shadow: inset 2px 3px 42px -7px rgba(0,0,0,0.75);
     transform:rotate(-5);
     background-color: brown;
     background-repeat: repeat;
-    background-size: auto;
+    background-size: cover;
     background-position-x: center;
     animation:
     Up-Down 0.5s ease;
