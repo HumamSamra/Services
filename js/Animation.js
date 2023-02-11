@@ -76,4 +76,4 @@ function ResetAnimation(){
      
 }
 
-const interval = setInterval(() => ResetAnimation(), 2750);
+const interval = setInterval(() => ResetAnimation(), 2700);

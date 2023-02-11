@@ -22,7 +22,6 @@
 box-shadow: inset 2px 3px 42px -7px rgba(0,0,0,0.75);
 }
 .first {
-    -webkit-box-reflect: above below right left 20px;
     position: absolute;
     width: 500px !important;
     height: 500px !important;
@@ -47,6 +46,7 @@ box-shadow: inset 2px 3px 42px -7px rgba(0,0,0,0.75);
     background-size: cover;
     background-position: center;
     animation:
+    Zoom-In-2 1s cubic-bezier(0,1.01,0,1.01),
     Left-Right 0.5s ease;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
@@ -81,27 +81,29 @@ box-shadow: inset 2px 3px 42px -7px rgba(0,0,0,0.75);
     background-size: cover;
     background-position-x: center;
     animation:
+    Zoom-In-2 1s cubic-bezier(0,1.01,0,1.01),
     Left-Right 0.5s ease-in-out;
     animation-delay: 1.5s;
     animation-fill-mode: forwards;
 }
 
 .fifth{
-    scale: 150px;
     position: absolute;
+    scale: 0%;
     width: 500px;
-    top:800px;
     height: 500px;
+    opacity: 100%;
     transform:rotate(-5);
     background-color: brown;
     background-repeat: repeat;
     background-size: cover;
     background-position-x: center;
     animation:
-    Up-Down 0.7s ease-in-out,
-    Zoom-In-2 0.7 cubic-bezier(0,.96,.01,.99);
+    Zoom-In-2 1s cubic-bezier(0,1.01,0,1.01),
+    Up-Down 1s ease-in-out;
     animation-delay: 2s;
     animation-fill-mode: forwards;
+    filter: drop-shadow(10px 10px 11px #000);
 }
 
 @keyframes Shake{
@@ -127,6 +129,12 @@ box-shadow: inset 2px 3px 42px -7px rgba(0,0,0,0.75);
     95% { transform: rotate(0deg);}
     100% { transform: translateY(0px) }
 }
+
+@keyframes Shake{
+from{scale:100%; opacity: 100%;}
+to{scale: 900%; opacity: 0%;}
+}
+
 @keyframes Zoom-In{
     from{scale: 0%;}
     to{scale: 100%;}
