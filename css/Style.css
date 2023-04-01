@@ -28,6 +28,18 @@
     0 0 1px #000;
 }
 
+.tbl-input{
+    width:100%;
+    height:40px;
+    border:none;
+    text-align:center;
+}
+td{
+    padding: 0px !important;
+}
+.tbl-input:focus{
+    outline:0px!important;
+}
 ::-webkit-scrollbar{
     display:none;
 }
