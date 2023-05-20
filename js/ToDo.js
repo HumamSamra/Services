@@ -31,7 +31,29 @@
     });
 
   }
-  
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  document.addEventListener('keydown', function(event) {
+  if ((event.ctrlKey || event.metaKey) && event.key === 's') {
+    event.preventDefault(); // Prevent the default browser save dialog
+Toast.fire({
+  icon: 'success',
+  title: 'Always Gotcha'
+})
+  }
+});
+
+
+
   function Update(i){
     const date = new Date();
     let input = document.getElementById("term_" + i).value;
